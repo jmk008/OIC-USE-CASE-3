@@ -1,0 +1,32 @@
+FORMAT: 1A
+HOST: https://invacaretest-a493523.integration.us2.oraclecloud.com/integration/flowapi/rest/USE_CASE_3_T_2/v01
+
+# Fetching OCC Customer Data
+
+Fetching OCC Customer Data is an API which fetches customer data from the Oracle Commerce Cloud (OCC) and loads the data into local database. The operation will be performed only if data transfer is permitted. ie. Transfer = "Yes".
+
+Parameter: Transfer = "Yes" (To initiate transfer)
+
+## Customer Data [/transfer_point]
+
+Only data with unique customer id will be inserted
+
+### Data Transfer [POST]
+
++ Request (application/json)
+
+        {
+            "Transfer" : "Yes"
+        }
+
++ Response 201 (application/json)
+
+     + Headers
+     
+            Authorization: Basic
+    
+    + Body
+    
+            {
+                "StatusMsg": "\"Success\""
+            }
